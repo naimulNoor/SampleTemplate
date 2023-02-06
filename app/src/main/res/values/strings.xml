@@ -1,0 +1,5 @@
+<!DOCTYPE resources [<!ENTITY appname "Sample App">]>
+
+<resources>
+    <string name="APP_NAME" translatable="false">&appname;</string>
+</resources>
