@@ -10,6 +10,5 @@ class SplashPresenter @Inject constructor(view: SplashContract.View) :
     override fun getAppVersion() {
 
 
-
     }
 }

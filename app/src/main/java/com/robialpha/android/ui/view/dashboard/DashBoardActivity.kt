@@ -1,28 +1,17 @@
-package com.robialpha.android.ui.view.splash
+package com.robialpha.android.ui.view.dashboard
 
-import android.Manifest
-import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.provider.Settings
-import android.telephony.TelephonyManager
 import android.util.Log
 import com.bumptech.glide.Glide
 import com.robialpha.android.R
 import com.robialpha.android.base.MvpBaseActivity
-import com.robialpha.android.data.prefs.Keys
-import com.robialpha.android.data.prefs.PrefKeys
-import com.robialpha.android.ui.view.dashboard.DashBoardActivity
-import com.robialpha.android.utils.AppUtils
-import com.robialpha.android.utils.Navigator
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 
-
-class SplashScreenActivity : MvpBaseActivity<SplashPresenter>(), SplashContract.View {
+class DashBoardActivity  : MvpBaseActivity<DashBoardPresenter>(), DashBoardContract.View {
     val handler = Handler()
     override fun getContentView(): Int {
         /*  if (mPrefManager.getBoolean(PrefKeys.LOGGED_IN, false)) {
@@ -33,13 +22,12 @@ class SplashScreenActivity : MvpBaseActivity<SplashPresenter>(), SplashContract.
 
 
 
-        return R.layout.activity_splash_screen
+        return R.layout.activity_dash_board
     }
 
     override fun onViewReady(savedInstanceState: Bundle?, intent: Intent) {
 
-        Glide.with(this).asGif().load(R.drawable.abc_vector_test).into(iv_robi);
-        Navigator.sharedInstance.navigate(this, DashBoardActivity::class.java)
+
 
 
 //        handler.postDelayed(Runnable {
@@ -50,8 +38,8 @@ class SplashScreenActivity : MvpBaseActivity<SplashPresenter>(), SplashContract.
 
 
 
-        var info= Build.MANUFACTURER +"-"+Build.MODEL
-        var androidversion=Build.VERSION.RELEASE
+        var info= Build.MANUFACTURER +"-"+ Build.MODEL
+        var androidversion= Build.VERSION.RELEASE
         Log.d("roni",androidversion)
 
 
@@ -65,7 +53,7 @@ class SplashScreenActivity : MvpBaseActivity<SplashPresenter>(), SplashContract.
     override fun onResume() {
         super.onResume()
         handler.postDelayed(Runnable {
-            mPresenter.getAppVersion()
+
         }, 1000)
     }
 
@@ -127,5 +115,4 @@ class SplashScreenActivity : MvpBaseActivity<SplashPresenter>(), SplashContract.
 
 
 
-    }
-
+}
